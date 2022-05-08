@@ -1,0 +1,8 @@
+<mat-toolbar class="container">
+    <span routerLink="/main">KONCI</span>
+      
+    <a mat-button routerLink="/user" *ngIf="loggedInUser">Jegyeim</a>
+    <a mat-button routerLink="/login" *ngIf="!loggedInUser">Jegyeim</a>
+    <a mat-button routerLink="/managerPage" >Admin page</a>
+
+</mat-toolbar>

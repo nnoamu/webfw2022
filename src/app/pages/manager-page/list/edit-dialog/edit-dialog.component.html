@@ -1,0 +1,65 @@
+<h1 mat-dialog-title>Koncert szerkesztése</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]="formInstance" (ngSubmit)="save()">
+        <div>
+            <mat-form-field>
+                <mat-label for="id">id: </mat-label>
+                <input readonly="readonly" matInput type="text" formControlName="id" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="artist">Előadó: </mat-label>
+                <input matInput type="text" formControlName="artist" />
+            </mat-form-field>
+        </div>
+        <div class="break"></div>
+        <div formGroupName="location" class="subgroup">
+            <mat-form-field>
+                <mat-label for="city">Város: </mat-label>
+                <input matInput type="text" formControlName="city" />
+            </mat-form-field>
+        
+        <div class="break"></div>
+            <mat-form-field>
+                <mat-label for="place">Helyszín: </mat-label>
+                <input matInput type="text" formControlName="place" />
+            </mat-form-field>
+        </div>
+        <div class="break"></div>
+        <div>
+            <mat-form-field>
+                <mat-label for="date">Dátum: </mat-label>
+                <input matInput type="date" formControlName="date" />
+            </mat-form-field>
+        </div>
+        <div class="break"></div>
+        <div>
+            <mat-form-field>
+                <mat-label for="gateOpen">Kapunyitás: </mat-label>
+                <input matInput type="text" formControlName="gateOpen" />
+            </mat-form-field>
+        </div>					
+        <div class="break"></div>
+        <div>
+            <mat-form-field>
+                <mat-label for="price">Normál ár: </mat-label>
+                <input matInput type="text" formControlName="price" />
+            </mat-form-field>
+        </div>					
+        <div class="break"></div>
+        <div>
+            <mat-form-field>
+                <mat-label for="quantity">Hely kapacitás: </mat-label>
+                <input matInput type="number" formControlName="quantity" />
+            </mat-form-field>
+        </div>
+    
+    </form>
+    <div class="mt-5" mat-dialog-actions>
+        <button mat-raised-button color="primary"
+        [disabled]="formInstance.dirty && formInstance.errors" (click)="save()"
+          cdkFocusInitial>Mentés</button>
+        <button mat-raised-button mat-dialog-close >Mégse</button>
+      
+      </div>
+</div>

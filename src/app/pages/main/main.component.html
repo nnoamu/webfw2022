@@ -1,0 +1,30 @@
+<h1>EZEKET NE HAGYD KI!</h1>
+<div class="container">
+<mat-card class="example-card " *ngFor="let concert of concerts" fxLayout="row" fxLayoutAlign="center"  >
+    <mat-card-title-group>
+      <mat-card-title style="cursor: pointer">{{concert.artist}}</mat-card-title>
+      <mat-card-subtitle>{{concert.date}}</mat-card-subtitle>
+    </mat-card-title-group>
+    <img mat-card-xl-image src="https://i.imgur.com/kGsfnM1.png">
+    <mat-card-content>
+      Kapunyitás: {{concert.gateOpen}}<br>
+       Helyszín: {{concert.location.city}}<br>
+       <b>{{concert.location.place}}</b>
+      </mat-card-content>
+    <app-concert [item]="concert"></app-concert>
+    <button mat-button (click) ="makeReservation()"> Foglalás </button>
+  </mat-card>
+
+</div>
+<hr>
+
+<h1>FŐBB HELYSZÍNEK</h1>
+
+<div class="container">
+    <mat-card class="example-card" *ngFor="let place of places" >
+        <mat-card-title-group>
+          <mat-card-title style="cursor: pointer;">{{place}}</mat-card-title>
+          <img mat-card-xl-image src="https://i.imgur.com/6sdX8IK.png" >
+        </mat-card-title-group>
+      </mat-card>
+    </div>

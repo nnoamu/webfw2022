@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cinema-eed57": {
+      "hosting": {
+        "cinema-app": [
+          "konci-web"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cinema-eed57"
+  }
+}
